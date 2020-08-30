@@ -23,6 +23,7 @@ export default {
   methods : {
     add: function() {
       this.items.push(this.text)
+      this.text=""
     }
   }
 }
