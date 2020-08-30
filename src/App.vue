@@ -2,8 +2,8 @@
   <div id="app">
     <form @submit.prevent="add">
       <input v-model="text">
+      <button>Add</button>
     </form>
-    <button @click="add">Add</button>
     <TodoList :items="items"/>
   </div>
 </template>
