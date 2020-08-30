@@ -1,31 +1,42 @@
 <template>
-  <div id="app">
-    <form @submit.prevent="add">
-      <input v-model="text">
-      <button>Add</button>
-    </form>
-    <TodoList :items="items"/>
-  </div>
+  <v-app>
+    <div id="app">
+      <v-container>
+        <v-form @submit.prevent="add">
+          <v-row>
+            <v-text-field solo v-model="text"></v-text-field>
+            <v-btn type="submit" class="mx-2" fab dark color="indigo">
+              ＋
+            </v-btn>
+          </v-row>
+        </v-form>
+        <v-row>
+          <v-col class="mx-5">
+            <TodoList :items="items" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+  </v-app>
 </template>
 
 <script>
-import TodoList from './components/TodoList.vue'
+import TodoList from "./components/TodoList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    TodoList
+    TodoList,
   },
-  data : () => ({
-    text: '',
-    items: []
+  data: () => ({
+    text: "",
+    items: [],
   }),
-  methods : {
+  methods: {
     add: function() {
-      this.items.push(this.text)
-      this.text=""
-    }
-  }
-}
+      this.items.push(this.text);
+      this.text = "";
+    },
+  },
+};
 </script>
-
